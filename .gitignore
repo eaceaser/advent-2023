@@ -44,3 +44,6 @@ CTestTestfile.cmake
 _deps
 
 bin/
+
+.ninja_deps
+.ninja_log
