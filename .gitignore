@@ -47,3 +47,4 @@ bin/
 
 .ninja_deps
 .ninja_log
+cmake-build-debug/
