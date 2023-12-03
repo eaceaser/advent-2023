@@ -68,7 +68,6 @@ namespace {
     }
 }
 
-
 int compute_power(const Game &game) {
     Round maxRound {0, 0, 0};
     for (auto round : game.rounds) {
