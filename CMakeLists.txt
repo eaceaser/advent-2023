@@ -14,6 +14,7 @@ add_executable(01-p2 ./01-p2/main.cpp)
 add_executable(02-p1 ./02-p1/main.cpp)
 add_executable(02-p2 ./02-p2/main.cpp)
 add_executable(03-p1 ./03-p1/main.cpp)
+add_executable(03-p2 ./03-p2/main.cpp)
 
 target_link_libraries(02-p1 PRIVATE foonathan::lexy)
 target_link_libraries(02-p2 PRIVATE foonathan::lexy)
