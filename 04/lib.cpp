@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <cmath>
 #include <fstream>
-#include <iostream>
 #include <lexy/action/parse.hpp>
 #include <lexy/callback/container.hpp>
 #include <lexy/dsl.hpp>
@@ -93,4 +92,41 @@ int part2(std::istream &input) {
   }
 
   return std::reduce(counts.begin(), counts.end());
+}
+
+int part2_cooler(std::istream &input) {
+  std::string line;
+  std::vector<Card> cards;
+
+  std::vector<int> counts;
+  int rowsize = 0;
+
+  int sum = 0;
+  int i = 0;
+  while (std::getline(input, line)) {
+    auto str = lexy::string_input(line);
+    auto result = lexy::parse<grammar::production>(str, lexy_ext::report_error);
+
+    if (result.has_value()) {
+      Card card = result.value();
+
+      if (rowsize == 0) {
+        rowsize = card.picks.size();
+        counts.resize(rowsize, 1);
+      }
+
+      int count = std::ranges::count_if(
+          card.picks, [&card](int i) { return card.winning.contains(i); });
+
+      for (int j = 1; j <= count; ++j) {
+        counts[(i + j) % rowsize] += counts[i];
+      }
+
+      sum += counts[i];
+      counts[i] = 1;
+      i = (i + 1) % rowsize;
+    }
+  }
+
+  return sum;
 }

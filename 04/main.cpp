@@ -11,6 +11,9 @@ int main() {
     input_file.clear();
     input_file.seekg(0, std::iostream::beg);
     std::cout << "part2: " << part2(input_file) << std::endl;
+    input_file.clear();
+    input_file.seekg(0, std::iostream::beg);
+    std::cout << "part2-cooler: " << part2_cooler(input_file) << std::endl;
     input_file.close();
   }
 }
