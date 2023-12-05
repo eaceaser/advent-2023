@@ -96,8 +96,6 @@ int part2(std::istream &input) {
 
 int part2_cooler(std::istream &input) {
   std::string line;
-  std::vector<Card> cards;
-
   std::vector<int> counts;
   int rowsize = 0;
 
