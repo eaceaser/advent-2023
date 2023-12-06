@@ -202,7 +202,7 @@ int part2(std::istream &input) {
         sourceIndex.emplace(lastEnd,
                             std::make_pair(lastEnd, entry.sourceStart));
       }
-      // [this, this end]
+      // [this, this end)
       sourceIndex.emplace(
           entry.sourceStart,
           std::make_pair(entry.destStart, entry.destStart + entry.length));
@@ -242,9 +242,6 @@ int part2(std::istream &input) {
       if (startIt->first != inputLeft || startIt != index.begin()) {
         --startIt;
       }
-      // if (endIt->first != inputRight) {
-      //   --endIt;
-      // }
 
       for (auto range : std::ranges::subrange(startIt, endIt)) {
         auto [sourceLeft, destRange] = range;
