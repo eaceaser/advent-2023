@@ -27,6 +27,9 @@ add_executable(05-tests 05/lib.cpp 05/lib.hpp 05/tests.cpp)
 add_executable(06 06/lib.cpp 06/lib.hpp 06/main.cpp)
 add_executable(06-tests 06/lib.cpp 06/lib.hpp 06/tests.cpp)
 
+add_executable(07 07/lib.cpp 07/lib.hpp 07/main.cpp)
+add_executable(07-tests 07/lib.cpp 07/lib.hpp 07/tests.cpp)
+
 target_link_libraries(02-p1 PRIVATE foonathan::lexy)
 target_link_libraries(02-p2 PRIVATE foonathan::lexy)
 
@@ -41,3 +44,7 @@ target_link_libraries(05-tests PRIVATE doctest::doctest)
 target_link_libraries(06 PRIVATE foonathan::lexy)
 target_link_libraries(06-tests PRIVATE foonathan::lexy)
 target_link_libraries(06-tests PRIVATE doctest::doctest)
+
+target_link_libraries(07 PRIVATE foonathan::lexy)
+target_link_libraries(07-tests PRIVATE foonathan::lexy)
+target_link_libraries(07-tests PRIVATE doctest::doctest)
